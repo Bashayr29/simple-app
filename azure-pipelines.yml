@@ -23,13 +23,14 @@ steps:
     openshiftService: 'OpenShift cluster'
     version: '4.2'
     cmd: 'oc new-app https://github.com/Bashayr29/simple-app.git'
-  displayName: Create new app
+    ignoreFlag: true
 - task: oc-cmd@2
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'OpenShift cluster'
     version: '4.2'
     cmd: 'oc expose svc simple-app'
+    ignoreFlag: true
   displayName: Create route
 - task: oc-cmd@2
   inputs:
