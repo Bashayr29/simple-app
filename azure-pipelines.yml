@@ -45,10 +45,3 @@ steps:
     openshiftService: 'OpenShift cluster'
     version: '4.2'
     cmd: 'oc status'
-- task: oc-cmd@2
-  inputs:
-    connectionType: 'OpenShift Connection Service'
-    openshiftService: 'OpenShift cluster'
-    version: '4.2'
-    cmd: 'echo "http://$(oc get route simple-app -o jsonpath=''{.spec.host}'')"'
-  displayName: Print route
