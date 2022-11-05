@@ -16,6 +16,11 @@ variables:
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
 steps:
+- task: oc-setup@2
+  inputs:
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'OpenShift cluster'
+    version: '4.10'
 - task: oc-cmd@2
   inputs:
     connectionType: 'OpenShift Connection Service'
