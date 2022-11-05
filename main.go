@@ -7,7 +7,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hi there!")
+    fmt.Fprintf(w, "Hi there!, from Azure DevOps")
 }
 
 func main() {
