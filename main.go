@@ -7,7 +7,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hi there new pipeline tesssssds :)")
+    fmt.Fprintf(w, "Hi there new pipeline security not added :)")
 }
 
 func main() {
