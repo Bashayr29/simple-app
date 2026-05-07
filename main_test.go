@@ -38,7 +38,7 @@ func TestNewMuxRoutesRootToHandler(t *testing.T) {
 	}
 }
 
-func TestNewMuxRoutesSubpathsToHandler(t *testing.T) {
+func TestNewMuxCatchAllRouting(t *testing.T) {
 	req := httptest.NewRequest(http.MethodGet, "/missing", nil)
 	rec := httptest.NewRecorder()
 
