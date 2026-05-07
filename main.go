@@ -8,6 +8,8 @@ import (
 
 const greeting = "Hi there new pipeline build from github add webhooks :)"
 
+var listenAndServe = http.ListenAndServe
+
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, greeting)
 }
@@ -18,6 +20,10 @@ func newMux() *http.ServeMux {
 	return mux
 }
 
+func run(addr string) error {
+	return listenAndServe(addr, newMux())
+}
+
 func main() {
-	log.Fatal(http.ListenAndServe(":8080", newMux()))
+	log.Fatal(run(":8080"))
 }
