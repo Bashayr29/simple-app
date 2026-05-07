@@ -65,8 +65,8 @@ func TestRunUsesConfiguredAddressAndMux(t *testing.T) {
 	listenAndServe = func(addr string, handler http.Handler) error {
 		called = true
 
-		if addr != ":9090" {
-			t.Fatalf("expected address %q, got %q", ":9090", addr)
+		if addr != ":8080" {
+			t.Fatalf("expected address %q, got %q", ":8080", addr)
 		}
 
 		req := httptest.NewRequest(http.MethodGet, "/", nil)
@@ -84,7 +84,7 @@ func TestRunUsesConfiguredAddressAndMux(t *testing.T) {
 		return expectedErr
 	}
 
-	err := run(":9090")
+	err := run(":8080")
 	if !called {
 		t.Fatal("expected listenAndServe to be called")
 	}
